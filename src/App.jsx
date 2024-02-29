@@ -75,7 +75,13 @@ function App() {
 
   const boxStyles = {
     background: "#E2E5DE",
-    marginTop: "10rem",
+    margin: "10rem auto", // Centering horizontally
+    marginLeft: "20rem", // Default left margin
+    
+    '@media (max-width: 900px)': {
+      marginLeft: '4rem', // Adjusting left margin for screens smaller than 600px
+    },
+  
     textAlign: "center",
     color: "#222",
     minHeight: "20rem",
@@ -83,7 +89,9 @@ function App() {
     padding: "4rem 2rem",
     boxShadow: "30px 40px 10px 9px rgba(0,0,0,0.1)"
   };
-
+  
+  
+  
   return (
     <Container maxWidth="md" sx={boxStyles}>
       <Typography variant='h5' sx={{ marginBottom: "2rem"}}>Stay Ahead with Accurate Conversions</Typography>
