@@ -94,7 +94,7 @@ function App() {
   
   return (
     <Container maxWidth="md" sx={boxStyles}>
-      <Typography variant='h5' sx={{ marginBottom: "2rem"}}>Stay Ahead with Accurate Conversions</Typography>
+      <Typography variant='h5' sx={{ marginBottom: "2rem"}}>Crypto Exchange!</Typography>
       <Grid container spacing={2}>
         <InputAmount />
         <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" />
@@ -108,6 +108,9 @@ function App() {
           <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{resultCurrency} {toCurrency}</Typography>
         </Box>
       ) : ""}
+      <Typography fontSize="25px" sx={{ position: "absolute", bottom: "1rem", right: "1rem" }}>
+        <Link target="_blank" rel="noopener" href="https://github.com/iJoyRide">Checkout my Github!</Link>
+      </Typography>
     </Container>
   );
 }
