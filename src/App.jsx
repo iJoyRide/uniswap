@@ -1,14 +1,30 @@
-import { useState } from 'react'
+import { useContext, useEffect } from 'react'
 import './App.css'
-import { Button, Container, Grid, Typography } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 import SwitchCurrency from './components/SwitchCurrency'
 import SelectCountry from './components/SelectCountry'
 import InputAmount from './components/InputAmount'
+import { CurrencyContext } from './context/CurrencyContext'
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {
+    fromCurrency,
+    setFromCurrency,
+    toCurrency,
+    setToCurrency,
+    firstAmount,
+    setFirstAmount
+
+  } = useContext(CurrencyContext)
+
+  useEffect(() => {
+    if(firstAmount){
+      
+    }
+  }, [firstAmount])
+
     const boxStyles = {
       background: "#E2E5DE",
       marginTop: "10rem",
@@ -27,9 +43,9 @@ function App() {
       </Typography>
       <Grid container spacing={2}>
         <InputAmount/>
-        <SelectCountry/>
+        <SelectCountry value ={fromCurrency} setValue = {setFromCurrency} label = "From"/>
         <SwitchCurrency/>
-        <SelectCountry/>
+        <SelectCountry value ={toCurrency} setValue = {setToCurrency} label = "To"/>
       </Grid>
     </Container>
   )
