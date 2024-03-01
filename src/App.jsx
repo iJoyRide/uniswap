@@ -75,12 +75,12 @@ function App() {
 
   const boxStyles = {
     background: "#E2E5DE",
-    margin: "10rem auto", // Centering horizontally
-    marginLeft: "20rem", // Default left margin
+    margin: "auto", // Centering horizontally
+    // marginLeft: "20rem", // Default left margin
     
-    '@media (max-width: 900px)': {
-      marginLeft: '4rem', // Adjusting left margin for screens smaller than 600px
-    },
+    // '@media (max-width: 900px)': {
+    //   marginLeft: '4rem', // Adjusting left margin for screens smaller than 600px
+    // },
   
     textAlign: "center",
     color: "#222",
