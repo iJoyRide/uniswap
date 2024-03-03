@@ -12,7 +12,6 @@ const InputAmount = () => {
     if (!isNaN(inputValue) && inputValue >= 0) {
       setFirstAmount(inputValue);
     }
-    // Optionally, you can provide feedback or handle the case when the input is not valid.
   };
 
   return (

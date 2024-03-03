@@ -48,7 +48,7 @@ function App() {
     if (firstAmount && fromCurrency && toCurrency && resultCurrency !== undefined) {
       toast.success(`Converted ${firstAmount} ${fromCurrency} to ${resultCurrency} ${toCurrency}`);
     } else {
-      toast.error('Invalid conversion. Please check your input.');
+      toast.error('Invalid conversion. Please check your input. (Enter numerical values only) ');
     }
   };
 
