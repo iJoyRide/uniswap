@@ -1,9 +1,11 @@
-import { Box, Container, Grid, Link, Typography } from '@mui/material'
+import { Box, Container, Grid, Link, Typography, Button } from '@mui/material';
 import { useContext, useEffect, useState } from 'react'
 import InputAmount from './components/InputAmount'
 import SelectCountry from './components/SelectCountry'
 import SwitchCurrency from './components/SwitchCurrency'
 import { CurrencyContext } from './context/CurrencyContext'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const exchangeRates = {
   BLUR: 0.20811525423728813,
@@ -41,6 +43,15 @@ const exchangeRates = {
 };
 
 function App() {
+
+  const handleConvert = () => {
+    if (firstAmount && fromCurrency && toCurrency && resultCurrency !== undefined) {
+      toast.success(`Converted ${firstAmount} ${fromCurrency} to ${resultCurrency} ${toCurrency}`);
+    } else {
+      toast.error('Invalid conversion. Please check your input.');
+    }
+  };
+
   const {
     fromCurrency,
     setFromCurrency,
@@ -94,6 +105,10 @@ function App() {
         <SwitchCurrency />
         <SelectCountry value={toCurrency} setValue={setToCurrency} label="To" />
       </Grid>
+      <ToastContainer />
+      <Button variant="contained" color="primary" onClick={handleConvert} sx={{ marginTop: '1rem' }}>
+        Convert
+      </Button>
 
       {firstAmount ? (
         <Box sx={{ textAlign: "left", marginTop: "1rem"}}>
@@ -104,6 +119,8 @@ function App() {
       <Typography fontSize="25px" sx={{ position: "absolute", bottom: "1rem", right: "1rem" }}>
         <Link target="_blank" rel="noopener" href="https://github.com/iJoyRide">Checkout my Github!</Link>
       </Typography>
+
+      
     </Container>
   );
 }
