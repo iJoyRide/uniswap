@@ -116,9 +116,9 @@ function App() {
           <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{resultCurrency} {toCurrency}</Typography>
         </Box>
       ) : ""}
-      <Typography fontSize="25px" sx={{ position: "absolute", bottom: "1rem", right: "1rem" }}>
+{/*       <Typography fontSize="25px" sx={{ position: "absolute", bottom: "1rem", right: "1rem" }}>
         <Link target="_blank" rel="noopener" href="https://github.com/iJoyRide">Checkout my Github!</Link>
-      </Typography>
+      </Typography> */}
 
       
     </Container>
